@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col col-md"></div>
+  <div class="col col-md-8">
+    <h2>Añadir nueva Factura</h2>
+    <a  class="btn btn-primary float-md-right" routerLink="/facturas">Regresar al listado</a>
+    <form [formGroup]="facturaForm"  (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="id_factura">Id detalle</label>
+        <i class="fa fa-check-circle check"  *ngIf="facturaForm.controls.id_detalle.valid"></i>
+        <i class="fa fa-exclamation-circle uncheck"  *ngIf="facturaForm.controls.id_detalle.invalid && facturaForm.controls.id_detalle.touched "></i>
+        <input type="text"
+               class="form-control"
+               id="id_detalle" 
+               formControlName="id_detalle">
+        <p class="alert alert-danger"
+           *ngIf="facturaForm.controls.id_detalle.invalid && facturaForm.controls.id_detalle.touched ">
+           El campo Id detalle es obligatorio
+        </p>       
+      </div>
+      <div class="form-group">
+        <label for="id_factura">Id factura</label>
+        <input type="text"
+               class="form-control"
+               id="id_factura" 
+               formControlName="id_factura">
+      </div>
+      <div class="form-group">
+        <label >Id producto</label>
+        <input type="text"
+               class="form-control"
+               id="id_producto" 
+               formControlName="id_producto">
+      </div>               
+      <div class="form-group">
+        <label for="cantidad">Cantidad</label>
+        <input type="number"
+               class="form-control"
+               id="cantidad" 
+               formControlName="cantidad">
+      </div>
+      
+      
+      
+      <button type="submit"
+              class="btn btn-primary"
+              [disabled]="!facturaForm.valid">
+              Añadir Factura
+      </button>
+      <a  class="btn btn-danger" routerLink="/presupuestos">Cancelar</a>      
+            <p class="alert alert-danger" *ngIf="!facturaForm.valid">
+                porfavor complete los campos
+            </p>
+    </form>  
+
+  </div>
+  <div class="col col-md"></div>
+</div>

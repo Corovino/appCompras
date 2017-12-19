@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col col-md"></div>
+  <div class="col-10 col-md-6">
+     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+       <h4>Ingreso</h4>
+       <label>Correo Electronico</label>
+       <input type="email" 
+              class="form-control"
+              id="inputEmail"
+              formControlName="email"
+              autofocus >
+      
+      <label>Contraseña</label>
+      <input type="password" 
+            class="form-control"
+            id="inputPassword"
+            formControlName="password"
+            autofocus >
+      
+      <button type="submit" 
+              class="btn btn-primary"
+              [disabled]="loginForm.valid"
+              >Inicie sesión</button>             
+     </form>  
+    <p>Si no dispone de cuenta pulse <a routerLink="/registro">Aquí</a></p>       
+    <p class="alert alert-danger" *ngIf="mensaje">
+      El usuario o contraseña no es correcto
+    </p>
+  </div>
+  <div class="col col-md"></div>
+</div>

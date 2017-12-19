@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Listado facturas</h2>
+  <a class="btn btn-primary float-md-right" routerLink="/addfactura">Añadir nueva factura</a>
+  <table class="table table-bordered table-striped ">
+    <thead>
+      <tr class="filters">
+        <th>Id Detalle</th>
+        <th>Id factura</th>
+        <th>Id producto</th>
+        <th>Cantidad</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let factura of facturas">
+         <td>{{factura.id_detelle}}</td>
+         <td>{{factura.id_factura}}</td>
+         <td>{{factura.id_producto}}</td>
+         <td>{{factura.cantidad}}</td>
+         <td>
+           <button class="btn btn-success" routerLink="/editfactura/{{factura.id$}}">Editar</button>
+         </td>
+         <td>
+           <button class="btn btn-danger" (click)="eliminarFactura(factura.id$)">ELiminar</button>
+         </td>
+         
+      </tr>
+    </tbody>
+  </table>
+</div>
