@@ -1,0 +1,26 @@
+<form #formCoche="ngForm"  (ngSubmit)="onSubmit(); formCoche.reset();">
+
+    <div>
+      <label for="">Nombre</label>
+      <input type="text" name="nombre" #nombre="ngModel" [(model)]="coche.nombre" required pattern="[0-9]´">
+      <span *ngIf="nombre.touched && !nombre.valid">
+              debe ingresar un nombre valido
+      </span>
+    </div><div>
+      <label for="">Nombre</label>
+      <input type="text" name="nombre" #nombre="ngModel" [(model)]="coche.marca">
+      <span *ngIf="nombre.touched && !nombre.valid">
+                  debe ingresar un nombre valido
+      </span>
+    </div><div>
+      <label for="">Nombre</label>
+      <input type="text" name="nombre" #nombre="ngModel" [(model)]="coche.modelo" pattern="[a-zA-Z#]+>
+       <span *ngIf="nombre.touched && !nombre.valid">
+              debe ingresar un nombre valido
+      </span>
+    </div>
+
+    <div>
+      <input type="submit" name="guardar" placeholder="guardar" [disable]="!formCoche.form.valid">
+    </div>
+</form>

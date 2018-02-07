@@ -12,10 +12,10 @@ export class InisesComponent implements OnInit {
 
   loginForm: FormGroup;
   userdata: any;
-
   mensaje = false;
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(
+              private formBuilder: FormBuilder,
               private autService: AutenticacionService,
               private router: Router,
               private activatedRouter: ActivatedRoute
@@ -35,7 +35,7 @@ export class InisesComponent implements OnInit {
           ]
         ]
     });
-    console.log(this.loginForm);  
+    console.log(this.loginForm);
   }
 
   isAuth() {

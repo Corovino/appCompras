@@ -24,6 +24,7 @@ import { FacturasModule } from './facturas/facturas.module';
 import { AddfraComponent } from './facturas/facturas/addfra/addfra.component';
 import { ListFacturasComponent } from './facturas/facturas/list-facturas/list-facturas.component';
 import { EditFacturaComponent } from './facturas/facturas/edit-factura/edit-factura.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 const routes = [
   { path : '', component: InicioComponent },
@@ -53,7 +54,8 @@ const routes = [
     PresupuestosComponent,
     EditpresComponent,
     RegistroComponent,
-    InisesComponent
+    InisesComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
